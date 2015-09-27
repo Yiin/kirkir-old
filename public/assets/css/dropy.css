@@ -100,6 +100,7 @@ main.night article {
   text-transform: uppercase;
   font-family: sans-serif;
   display: inline-block;
+  background: rgba(64, 80, 70, 0.58);
 }
 
 .dropy__title {

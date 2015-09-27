@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "laravel/socialite": "~2.0",
         "facebook/php-sdk": "^3.2",
-        "facebook/php-sdk-v4": "^5.0"
+        "facebook/php-sdk-v4": "^5.0",
+        "graham-campbell/dropbox": "~3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

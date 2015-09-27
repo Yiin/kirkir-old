@@ -1,27 +1,40 @@
 html, body {margin: 0; padding: 0;}
 
-
 body{
     background-image: url('../images/bg.jpg');
-    background-size: cover 100% 100%;
+    background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: top;
 }
 
 #nav {
     width: 100%;
-    float: left;
 }
 
 #nav img {
     width: 80px;
     float: left;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 30px;
 }
 
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-pic {
+    height: 32px;
+    width: 32px;
+    background-position: 50% 50%;
+    border-radius: 45%;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: -12px;
+}
+
 .login {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 30px;
     float: right;
 }
@@ -31,6 +44,7 @@ body{
     text-decoration: none;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 1;
+    padding-right: 20px;
 }
 
 .login a:hover{
@@ -53,12 +67,10 @@ body{
 
 .spanel {
     clear: both;
-    width: 1000px;
     margin: 0 auto;
 }
 
 .spanel img{
-    float: left;
     padding-left: 2px;
 }
 
@@ -77,13 +89,24 @@ body{
     text-align: center;
 }
 
-#footer {
-    clear: both;
-    width: 100%;
-    float: left;
-    bottom: 0;
-    position: absolute;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);;
+.search-results {
+border-radius: 5px;float: left;width: 100%;background: white;padding: 7px;}
+
+table#results-table tr {
+height: 30px;}
+
+table#results-table td {
+border: 1px solid rgba(0, 0, 0, 0.16);border-top: none;border-bottom: none;text-align: center;}
+
+.footer {
+    margin-top: 100px;
+ /*  position: absolute;
+ bottom: 0; */
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 33px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #copy {
@@ -92,9 +115,7 @@ body{
 
 #copy p {
     color: #d9d9d9;
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
+    padding: 5px 10px;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 1;
     font-size: 14px;
@@ -135,7 +156,12 @@ body{
     -o-transition:ease .2s;
 }
 
-
+.search-btn {
+    background: url('../images/search.png') no-repeat;
+    height: 40px;
+    width: 42px;
+    border: none;
+}
 
 select {
     height: 36px;

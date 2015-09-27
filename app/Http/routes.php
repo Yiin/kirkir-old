@@ -24,6 +24,99 @@ Route::get('/', function()
     return View::make('welcome', array('data'=>$data));
 });
 
+Route::get('menu', function () {
+    if(Auth::check()) {
+        return view('menu');
+    }
+    else {
+        return Redirect::to('/');
+    }
+});
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('team', function () {
+    return view('team');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('user', function ()
+{
+    return view('user');
+});
+
+Route::post('remove-pet', function() {
+    $pet = App\Pet::find(Input::get('pet_id'));
+    //App\Pet::where('user_id', Auth::user()->id)
+    //    ->where('id', Input::get('pet_id'))->get();
+
+    if($pet) {
+        $pet->delete();
+        return ['success' => true];
+    }
+    else {
+        return ['success' => false];
+    }
+});
+
+Route::post('add-pet', function() {
+    $pet = new App\Pet;
+
+    $pet->name = Input::get('name', 'unknown');
+    $pet->type_id = Input::get('type', 1);
+    $pet->breed_id = Input::get('breed', 1);
+    $pet->gender = Input::get('gender', 0);
+    $pet->country = Input::get('country', 'lt');
+    $pet->years = Input::get('years', 2015);
+
+    $pet->user_id = Auth::user()->id;
+
+    $pet->save();
+
+    return $pet;
+});
+
+Route::post('search', function() {
+    $retdata = [];
+
+    foreach(App\Pet::all() as $pet) {
+        if(Input::has('country')) {
+            if($pet->country != Input::get('country')) {
+                continue;
+            }
+        }
+        if(Input::has('type')) {
+            if($pet->type_id != Input::get('type')) {
+                continue;
+            }
+        }
+        if(Input::has('breed')) {
+            if($pet->breed_id != Input::get('breed')) {
+                continue;
+            }
+        }
+        if(Input::has('gender')) {
+            if($pet->gender != Input::get('gender')) {
+                continue;
+            }
+        }
+        array_push($retdata, [
+            'country' => $pet->country,
+            'name' => $pet->name,
+            'type' => $pet->type->name,
+            'breed' => $pet->breed->name,
+            'gender' => $pet->gender
+        ]);
+    }
+
+    return $retdata;
+});
+
 Route::get('login/fb', function() {
     return Socialize::driver('facebook')->redirect();
 });

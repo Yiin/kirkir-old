@@ -146,7 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Laravel\Socialite\SocialiteServiceProvider::class,
-
+        GrahamCampbell\Dropbox\DropboxServiceProvider::class,
     ],
 
     /*
@@ -196,6 +196,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Socialize' => Laravel\Socialite\Facades\Socialite::class,
+        'Dropbox' => GrahamCampbell\Dropbox\Facades\Dropbox::class
     ],
 
 ];

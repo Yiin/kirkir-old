@@ -1,0 +1,13 @@
+
+.login a, #copy p, #bottom-meniu ul li a {
+    color: #FF6130;
+}
+
+.login a:hover {
+    color: #FF835D;
+}
+
+.add-pet-col {
+	width: 100%;
+	max-width: 500px;
+}

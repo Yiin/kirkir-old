@@ -162,13 +162,13 @@ Route::get('login/fb/callback', function() {
 
     $me = Socialize::driver('facebook')->user();
 
-    //dd($me->token);
+    // dd($me);
 
     $user = new User;
 
     $profile = Profile::whereUsername($me->email)->first();
     if (empty($profile)) {
-        $user->name = $me->first_name . ' ' . $me->last_name;
+        $user->name = $me->name;
         $user->email = $me->email;
         $user->photo = 'https://graph.facebook.com/v2.4/' . $me->id . '/picture?type=normal';
 

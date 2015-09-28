@@ -36,10 +36,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '493749207461031',
-        'client_secret' => '4951f7daf6489efa4d8996d942718618',
-        'redirect' => url() . '/login/fb/callback',
-        'cookie' => true
-    ]
+        'client_id' => '890110604400098',
+        'client_secret' => '59e4cdf22bf7d9a1f0686aab067c22b8',
+        'redirect' => 'http://kirkir.cloudapp.net/login/fb/callback'
+    ],
 
 ];

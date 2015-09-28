@@ -54,6 +54,11 @@
             <div id="front-text">
                 <p>we are connecting pets...</p>
             </div>
+            @if (isset($message))
+            <p>
+                {{ $message }}
+            </p>
+            @endif
             <div class="search-results">
                 <table id="results-table" class="display" cellspacing="0" width="100%">
                     <thead>

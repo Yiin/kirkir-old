@@ -125,15 +125,17 @@ Route::get('login/fb/callback', function() {
     $code = Input::get('code');
     if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
 
-    $facebook = new Facebook(array(
-    	'appId' => '493749207461031',
-        'secret' => '4951f7daf6489efa4d8996d942718618'
-    ));
+    $facebook = new Facebook([
+    	'appId' => '890110604400098',
+        'secret' => '59e4cdf22bf7d9a1f0686aab067c22b8'
+    ]);
     $uid = $facebook->getUser();
 
     if ($uid == 0) return Redirect::to('/')->with('message', 'There was an error');
 
     $me = Socialize::driver('facebook')->user();
+
+    //dd($me);
 
     $user = new User;
 

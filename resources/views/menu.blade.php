@@ -60,8 +60,8 @@
                         <div class="default text">Select Gender</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                          <div class="item" data-value="male">Male</div>
-                          <div class="item" data-value="female">Female</div>
+                          <div class="item" data-value="0">Male</div>
+                          <div class="item" data-value="1">Female</div>
                         </div>
                       </div>
                     </div>

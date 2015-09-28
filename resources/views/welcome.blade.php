@@ -54,7 +54,7 @@
             <div id="front-text">
                 <p>we are connecting pets...</p>
             </div>
-            @if (isset($message))
+            @if (!empty($message))
             <p>
                 {{ $message }}
             </p>

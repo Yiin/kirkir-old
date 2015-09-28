@@ -36,9 +36,15 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '890110604400098',
-        'client_secret' => '59e4cdf22bf7d9a1f0686aab067c22b8',
-        'redirect' => 'http://kirkir.cloudapp.net/login/fb/callback'
+        'client_id' => env('FB_KEY'),
+        'client_secret' => env('FB_SECRET'),
+        'redirect' => env('BASE_URL') . '/login/fb/callback'
     ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_KEY'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect' => env('BASE_URL') . '/login/gmail/callback'
+    ]
 
 ];
